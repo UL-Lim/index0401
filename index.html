@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>✦그리드실험중✦</title>
+	<style type="text/css">
+
+		.wrap{height: 88vh; margin: auto; text-align: center; background-color: grayy; overflow:hidden; }
+		header {z-index: 1;  top: 0; left: 0; right: 0; height: 40px; background: #F8F8F8; border-bottom: 1px solid #DDDDDD; margin: 0 auto; overflow: auto;}
+		header .navlogo {z-index: 0; height: 21px; width: auto; position: absolute; left: 11px; top: 10px; float: left; opacity: 0; animation: navlogoani 1s cubic-bezier(0.4, 0.01, 0.165, 0.99) forwards;}
+		header .navlogobox {overflow: hidden;
+    height: 40px;
+    width: 97px;
+    position: absolute;
+    left: 11px;
+    top: 0;
+    float: left;
+}
+		header .largeNav {
+    display: block;
+    font-family: 'Roboto', 'Sans-serif';
+    font-weight: 600;
+    font-size: 15px;
+    width: 155px;
+    height: 20px;
+    line-height: 20px;
+    position: absolute;
+    left: 130px;
+    top: 11px;
+    margin: 0;
+}
+	nav {
+    display: block;
+    width: 90%;
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    left: 5%;
+    float:left;
+    transition: all .5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+}
+		ul {
+    margin-top: 0;
+    padding: 0;
+    list-style-type: none;
+    color: #222;
+    word-break: keep-all;
+}
+		nav .navM {
+    margin-left: 65px;
+}
+nav li {
+    display: inline;
+    color: #333;
+    line-height: 20px;
+}
+		nav a {
+    color: #333;
+    font-weight: 400;
+    padding: 0 2px 11px 2px;
+    border-bottom: 0px #fff;
+    transition: all 0.3s ease-in-out;
+}
+a {
+    text-decoration: none;
+    color: #222;
+}
+		nav li {
+    display: inline;
+    color: #333;
+    line-height: 20px;
+}
+		.searchform {
+    background: transparent;
+    width: 805px;
+    height: 40px;
+    position: absolute;
+    top: -40px;
+    right: 10px;
+    transition: all .5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+}
+		.searchformActive {
+    top: 0;
+    transition: all .5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+}
+		.navigation .search {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    cursor: pointer;
+}
+		nav #on {
+    padding-bottom: 7px;
+    border-bottom: 4px solid #333;
+    color: #333;
+}
+		.navigation .search {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    cursor: pointer;
+}
+		.mask {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.3;
+    left: 0;
+    top: 40px;
+}
+		.searchform {
+    background: transparent;
+    width: 805px;
+    height: 40px;
+    position: absolute;
+    top: -40px;
+    right: 10px;
+    transition: all .5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+}
+
+		.menu::after {
+			 -webkit-transition: all 0.3s;
+			-moz-transition: all 0.3s;
+ 	 		-o-transition: all 0.3s;
+			transition: all 0.3s;
+		}
+
+
+		.overred{height: 100%; background-color: pinkk; width: 16%; position: relative; float: left;} 
+		.redbox{width: 100%; height: 100%; position: relative; background-color: redd; text-align: left; font-size: 0.9em; word-wrap: break-word; border:1px solid black;}
+		.button{margin-bottom: 35px;}
+		.overyell{height: 100%; overflow: auto; background-color: pinkk; width: 25%; position: relative; float: left; border:1px solid black;} 
+		.yellbox{width: 100%; height: 3000px; position: relative; background-color: yelloww; text-align: left; font-weight: 900; font-size: 4em; word-wrap: break-word; }
+		.overgreen{height: 100%; overflow: auto; background-color: pinkk; width: 25%; position: relative; float: left; border:1px solid black;} 
+		.greenbox{width: 100%; height: 3000px; position: relative; background-color: greenn; overflow: hidden; word-wrap: break-word;}
+		.overblack{height: 100%;  background-color: pinkk; width: 20%; position: relative; float: left; border:1px solid black;} 
+		.blackbox{width: 100%; height: 100%; position: relative; background-color: black; text-align: left; font-weight: 900; font-size: 4em; color: white; word-wrap: break-word;}
+		.leftmargin{height: 100%; background-color: white; width: 7%; position: relative; float: left;}
+		.rightmargin{height: 100%; background-color: white; width: 7%; position: relative; float: left;}
+
+		.menunbox{margin-top:-1.2%; margin-right: 2%; font-size:1.6em; float:left; font-weight: 900;}
+		.menu{
+			-webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+			-moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+			-ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+			-o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+			transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+			border:2px solid; border-radius: 50px; float: left; padding: 2% 5% 2% 5%; text-align: center; font-weight: 900;}
+		#menuboxd{letter-spacing: -0.025em;}
+		#menuboxi{letter-spacing: 0.18em; margin-right:-0.15%;}
+
+		.menu:hover {
+			color: #fff;
+			box-shadow: rgba(0, 0, 0, 1.0) 0 0px 0px 40px inset;
+			}
+
+		footer{width:1300px; height:100px; /*background: #DDD;*/ 
+	margin:0 auto; 
+	padding:0 10px 0 10px; overflow: hidden;}
+footer hr{margin:10px 0 10px 0; border:0.5px solid #e2e2e2;}
+footer ul{color:#333; line-height:21px;}
+footer a {text-decoration:none; color:#333;}
+footer .footerBox, .footerImg{width:145px; margin:0 20px 0 0; float:left;}
+.footerImg object{width:145px; height:auto; margin-top:1px;}
+.footerImg img{width:145px; height:auto; margin-top:-5.5px;}
+footer .footerInfo{width:310px; margin-left:165px; float:left;}
+footer li{font-size: 0.8em;}
+
+	</style>
+</head>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<body>
+	<div class="wrap">
+		<header>
+			<div class="navigation">
+				<!--상단로고-->
+				<object type="image/svg+xml" data="./img/navlogo.svg" class="navlogo"></object>
+				<a href="./index.html">
+					<div class="navlogobox">
+					</div>
+				</a>
+				<a href="./work.html">
+					<h1 class="largeNav">HKNUDESIGN 2018</h1>
+				</a>
+		                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+				<!--메뉴-->
+				<nav>
+					<ul>
+
+						<li class="navM"><a href="student.html">STUDENT</a></li>
+						<li class="navM"><a href="work.html" id="on">WORK</a></li>
+
+
+					</ul>
+				</nav>
+
+				<!--검색폼-->
+				<div class="searchform">
+				<input id="searchInput" type="text" placeholder="Search">
+					<div class="searchform-img">
+						<svg fill="#333" height="18" viewBox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
+						    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+						    <path d="M0 0h24v24H0z" fill="none"/>
+						</svg>
+					</div>
+			   	</div>
+			   	<div class="mask"></div>
+				<!--검색-->
+				<div class="search">
+					<svg id="searchIcon" fill="#333" height="18" viewBox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
+					    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+					    <path d="M0 0h24v24H0z" fill="none"/>
+					</svg>
+					<svg id="cancelIcon" fill="#333" height="18" viewBox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
+					    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+					    <path d="M0 0h24v24H0z" fill="none"/>
+					</svg>
+				</div>
+			</div>
+		</header>
+		<div class="leftmargin"></div>
+		<div class="overred">
+			<div class="redbox">
+				<nav>
+					<ul class="button"><div class="menunbox" id="menuboxd">(D)</div> <a href="D_P.html"><div class="menu">디지털 프로젝트_17</div></a></ul>
+					<ul class="button"><div class="menunbox">(B)</div> <a href="B_M.html"><div class="menu">브랜드 매니지먼트_17</div></a></ul>
+					<ul class="button"><div class="menunbox">(V)</div> <a href="V_P.html"><div class="menu">시각 프로젝트_17</div></a></ul>
+					<ul class="button"><div class="menunbox" id="menuboxi">(I)</div> <a href="I_B.html"><div class="menu">인터랙션 비즈니스_17</div></ul></a>
+				</nav>
+			</div>
+		</div>
+		<div class="overyell">
+			<div class="yellbox">navigationnavigationnavigation</div>
+		</div>
+		<div class="overgreen">
+			<div class="greenbox"></div>
+		</div>
+				<div class="overblack">
+			<div class="blackbox">navigationnavigationnavigation</div>
+		</div>
+		<div class="rightmargin"></div>
+	</div>
+	<footer>
+		<hr>
+		<ul class="footerImg">
+			<li><object type="image/svg+xml" data="./img/footerlogo.svg"></object></li>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="레이어_1" x="0px" y="0px" viewBox="-304 361 190 80" style="enable-background:new -304 361 190 80;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;}
+	.st1{fill:#333333;}
+</style>
+<g id="Layer_1" class="st0">
+	
+		<image style="display:inline;overflow:visible;enable-background:new    ;" width="190" height="97" xlink:href="hknu.png" transform="matrix(1 0 0 1 -304 352)">
+	</image>
+</g>
+<g id="Layer_2" class="st0">
+</g>
+<g>
+	<path class="st1" d="M-261.6,367.3c0.3-0.8,0.3-1.5,0.5-2c0.3-0.8,0-1.5-0.3-2c-0.3-0.5-1-0.8-2-0.8l0.5-1h13.6l-0.5,1h-0.8   c-1,0-1.8,0.3-2.3,0.8c-0.8,0.5-1.3,1.8-1.5,3.3l-4.3,16.8l12.5-13.8l0.8-3.3c0.3-0.8,0.3-1.3,0.3-1.5c0.3-0.8,0-1.5-0.3-1.8   c-0.3-0.5-1-0.8-2-0.8l0.5-1h13.6l-0.5,1c-1.3,0-2,0.3-2.8,0.8c-0.8,0.5-1.3,1.8-1.5,3.3l-4.3,16.8l12-13.3c2-2.3,3.3-3.8,4-4.8   c0.3-0.5,0.5-1,0.8-1.5c0-0.3,0-0.8-0.3-1c-0.3-0.3-1-0.5-2-0.5l0.5-1h8.8l-0.5,1c-0.8,0.3-1.5,0.5-2.3,0.8c-0.8,0.5-2,1.8-3.5,3.3   l-26.4,29.1h-1.5l5.8-22.6l-20.3,22.6h-1.8"/>
+	<path class="st1" d="M-207.9,361l-10.3,22.1c2.8-3.3,4.8-5.5,6-6.5c1.8-1.8,3.3-2.8,4.5-3.3c1.3-0.5,2.3-0.8,3.3-0.8   c0.8,0,1.5,0.3,2,1c0.5,0.8,0.8,1.5,0.5,2.5c-0.3,1-0.5,2-1.3,3.3l-5,10.5c-0.5,1-0.8,1.5-0.8,1.8s0,0.3,0,0.5l0.3,0.3   c0.3,0,0.5,0,0.8-0.3c0.5-0.5,1.3-1,2-2c0.3-0.3,0.5-0.5,1-1l0.8,0.5c-1.8,2.3-3.5,4-4.8,4.8c-1.5,0.8-2.8,1.3-3.8,1.3   s-1.8-0.3-2.3-0.8c-0.5-0.5-0.8-1.3-0.5-2c0.3-0.8,0.5-1.8,1.3-3l4.8-10.5c0.3-0.8,0.5-1.3,0.5-1.5s0-0.3-0.3-0.5   c0-0.3-0.3-0.3-0.5-0.3c-0.5,0-1.5,0.5-2.8,1.5c-2.5,2-5.3,5.3-8,9.5l-3.5,7.3h-6l13.1-27.9c0.5-1.3,0.8-2,1-2.5c0-0.5,0-0.8-0.3-1   s-1-0.5-2-0.5l0.3-1l8.5-1.5H-207.9z"/>
+	<path class="st1" d="M-185.8,372.3l-8,17.6c-0.5,1-0.8,1.8-0.8,2c0,0.3,0,0.3,0.3,0.5c0,0.3,0.3,0.3,0.5,0.3s0.5,0,1-0.3   c0.8-0.5,2-1.8,3.3-3.3l0.8,0.5c-3.3,4.3-6.3,6.5-9,6.5c-1,0-1.8-0.3-2.5-1c-0.5-0.5-0.8-1.3-0.5-2.3c0-0.5,0.5-1.3,0.8-2.3   l5.5-11.8c0.5-1.3,0.8-2,1-2.5c0-0.3,0-0.8-0.3-1s-0.8-0.5-1.3-0.5c-0.3,0-0.5,0-1,0l0.5-1l8.5-1.3h1.3V372.3z M-185.3,361   c1,0,1.8,0.3,2.3,1c0.5,0.8,0.8,1.5,0.5,2.5c-0.3,1-0.8,1.8-1.5,2.5c-0.8,0.8-1.8,1-2.8,1c-1,0-1.8-0.3-2.3-1   c-0.5-0.8-0.8-1.5-0.5-2.5c0.3-1,0.8-1.8,1.5-2.5C-187.1,361.3-186.3,361-185.3,361z"/>
+	<path class="st1" d="M-169,366.3l-3.3,6.8h3.3l-1.3,2.8h-3.3l-6.5,14.3c-0.5,1-0.8,1.5-0.8,2c0,0.3,0,0.5,0,0.5   c0,0.3,0.3,0.3,0.5,0.3s0.5,0,1-0.3c0.8-0.5,2-1.5,3.3-3l0.8,0.5c-1.5,2-3,3.5-4.5,4.3c-1.5,1-3,1.3-4.3,1.3c-1,0-2-0.3-2.5-0.8   c-0.5-0.5-0.8-1.3-0.5-2.3c0.3-1,0.5-2.3,1.3-3.8l6.3-13.3h-3.3l0.8-1.8c2.3-0.8,4.3-1.8,5.8-2.8c1.5-1,3.8-2.8,6-5h1.3V366.3z"/>
+	<path class="st1" d="M-165,385.8c-0.3,1-0.5,2-0.8,2.5c-0.3,1.3,0,2.3,0.5,3c0.5,0.8,1.5,1,2.8,1s2.3-0.3,3.5-0.8   c1.3-0.5,2.8-1.5,4.5-3l0.5,0.8c-2.3,2.3-4.5,4-6.3,4.8c-2,1-4,1.5-6.3,1.5c-2.8,0-4.5-0.8-5.3-2c-0.8-1.3-1-2.8-0.8-4.5   c0.5-2.8,1.8-5.3,3.8-8s4.5-4.8,7.5-6.5c3-1.5,5.8-2.5,8.5-2.5c1.3,0,2.3,0.3,3,1c0.5,0.8,0.8,1.5,0.5,2.5   c-0.3,1.3-0.8,2.3-1.8,3.5c-1.3,1.5-2.8,2.8-4.3,3.8c-1.5,1-3.3,1.8-5.3,2.3C-161.5,385.3-163,385.6-165,385.8z M-164.7,384.6   c1.5-0.3,2.8-0.5,3.5-0.8c0.8-0.3,1.8-1,2.8-1.8c1-0.8,1.8-1.8,2.5-3c0.8-1.3,1.3-2.5,1.5-3.5c0-0.5,0-0.8-0.3-1   c-0.3-0.3-0.5-0.5-1-0.5c-0.8,0-1.8,0.5-3,1.8C-160.7,377.6-162.7,380.6-164.7,384.6z"/>
+	<path class="st1" d="M-261.6,412.1c0.3-0.8,0.3-1.5,0.5-2c0.3-0.8,0-1.5-0.3-2c-0.3-0.5-1-0.8-2-0.8l0.5-1h13.6l-0.5,1h-0.8   c-1,0-1.8,0.3-2.3,0.8c-0.8,0.5-1.3,1.8-1.5,3.3l-4.3,16.8l12.5-13.8l0.8-3.3c0.3-0.8,0.3-1.3,0.3-1.5c0.3-0.8,0-1.5-0.3-1.8   c-0.3-0.5-1-0.8-2-0.8l0.5-1h13.6l-0.5,1c-1.3,0-2,0.3-2.8,0.8c-0.8,0.5-1.3,1.8-1.5,3.3l-4.3,16.8l12-13.3c2-2.3,3.3-3.8,4-4.8   c0.3-0.5,0.5-1,0.8-1.5c0-0.3,0-0.8-0.3-1c-0.3-0.3-1-0.5-2-0.5l0.5-1h8.8l-0.5,1c-0.8,0.3-1.5,0.5-2.3,0.8c-0.8,0.5-2,1.8-3.5,3.3   l-26.4,29.1h-1.5l5.8-22.6l-20.3,22.6h-1.8"/>
+	<path class="st1" d="M-206.2,417.4l-7.5,16.3l-0.8,2c0,0.3-0.3,0.5-0.3,0.5c0,0.3,0,0.3,0,0.5s0.3,0.3,0.5,0.3s0.8-0.3,1.5-0.8   c0.3-0.3,1-1,2.3-2.3l0.8,0.5c-1.5,2-3,3.8-4.5,4.8c-1.5,1-3,1.5-4.5,1.5c-1,0-1.5-0.3-2-0.8c-0.5-0.5-0.5-1-0.5-1.8   c0-0.8,0.5-1.8,1.5-3.5l1-2c-2.5,3.3-4.8,5.5-6.8,7c-1.3,0.8-2.3,1.3-3.5,1.3c-1.5,0-2.5-0.5-3-1.8c-0.5-1.3-0.5-2.5-0.3-4.3   c0.5-2.3,1.5-5,3.5-8c2-3,4.3-5.5,6.8-7.3c2.3-1.5,4-2.3,5.8-2.3c1,0,1.5,0.3,2,0.8c0.5,0.5,0.8,1.5,0.8,3l1.5-3L-206.2,417.4z    M-214.9,422.2c0.3-1.3,0.3-2.3,0-2.8c-0.3-0.5-0.5-0.5-1-0.5s-1,0.3-1.8,0.8c-1.3,1-2.8,3-4.5,6.3c-1.8,3-3,5.8-3.3,8   c-0.3,0.8,0,1.5,0,1.8s0.5,0.5,0.8,0.5c0.8,0,1.5-0.5,2.5-1.3c1.3-1.3,2.5-2.8,3.8-4.5C-216.7,427.2-215.4,424.4-214.9,422.2z"/>
+	<path class="st1" d="M-202.4,440.5h-1c0.3-1.3,0.5-2.3,0.5-3c0.3-1.8,0.8-4.5,1-8c0.3-3.5,0.5-5.8,0.3-7c0-0.8-0.5-1.5-0.8-2   c-0.3-0.3-0.8-0.5-1.3-0.5c-0.3,0-0.5,0-1,0l0.3-1l8.5-2.3c0.8,4.5,0.8,10.3-0.8,17.1c2.8-2.3,4.8-4.3,6-5.5c1.3-1.5,1.8-2.5,2-3.5   c0.3-0.8,0-1.5-0.5-2.3s-0.8-1.3-0.8-1.8c0-0.3,0-0.8,0-1c0.3-0.8,0.5-1.5,1.3-2.3c0.8-0.5,1.5-0.8,2.3-0.8c1,0,1.5,0.3,2,0.8   c0.5,0.8,0.8,1.8,0.5,2.8c-0.3,1.3-0.5,2.3-1.3,3.3c-0.5,1-1.5,2.3-2.8,3.8s-2.5,2.8-4,4C-194.1,434.2-197.6,437.2-202.4,440.5z"/>
+	<path class="st1" d="M-177.3,430.7c-0.3,1-0.5,2-0.8,2.5c-0.3,1.3,0,2.3,0.5,3c0.5,0.8,1.5,1,2.8,1c1.3,0,2.3-0.3,3.5-0.8   c1.3-0.5,2.8-1.5,4.5-3l0.5,0.8c-2.3,2.3-4.5,4-6.3,4.8c-2,1-4,1.5-6.3,1.5c-2.8,0-4.5-0.8-5.3-2c-0.8-1.3-1-2.8-0.8-4.5   c0.5-2.8,1.8-5.3,3.8-8s4.5-4.8,7.5-6.5c3-1.5,5.8-2.5,8.5-2.5c1.3,0,2.3,0.3,3,1c0.5,0.8,0.8,1.5,0.5,2.5   c-0.3,1.3-0.8,2.3-1.8,3.5c-1.3,1.5-2.8,2.8-4.3,3.8c-1.5,1-3.3,1.8-5.3,2.3C-173.5,430.2-175.3,430.5-177.3,430.7z M-176.8,429.5   c1.5-0.3,2.8-0.5,3.5-0.8c0.8-0.3,1.8-1,2.8-1.8c1-0.8,1.8-1.8,2.5-3c0.8-1.3,1.3-2.5,1.5-3.5c0-0.5,0-0.8-0.3-1   c-0.3-0.3-0.5-0.5-1-0.5c-0.8,0-1.8,0.5-3,1.8C-173,422.4-175,425.4-176.8,429.5z"/>
+</g>
+</svg>
+
+
+		</ul>
+		<ul class="footerBox">
+			<li><a href="http://hknudesign.kr/show/2017/" target="_blank">homepage</a></li>
+			<li><a href="http://www.grafolio.com/story/22249" target="_blank">grafolio</a></li>
+			<li><a href="http://www.facebook.com/hknudg2017/" target="_blank">facebook</a></li>
+		</ul>
+		<ul class="footerImg">
+			<li><img src="hknu.png"></img></li>
+		</ul>
+		<ul class="footerBox">
+			<li><a href="http://hknudesign.kr/index.php" target="_blank">homepage</a></li>
+			<li><a href="https://www.instagram.com/hknudesign/" target="_blank">youtube</a></li>
+			<li><a href="https://www.youtube.com/channel/UCxjGb_dSd3r8JkWN4QSZ4Dg/" target="_blank">instagram</a></li>
+		</ul>
+		<ul class="footerBox">
+			<li><a href="https://goo.gl/BvPpBX" target="_blank">flickr</a></li>
+			<li><a href="https://issuu.com/hknu-design/" target="_blank">publications</a></li>
+			<li><a href="https://www.facebook.com/cmonovation/" target="_blank">CMCO</a></li>
+		</ul>
+		<ul class="footerInfo">
+			<li>국립한경대학교 디자인학과</li>
+			<li>경기도 안성시 중앙로 327 한경대학교 제3공학관 6, 7층</li>
+			<li>copyright © HKNUDESIGN Graduation Exhibition</li>
+		</ul>
+	</footer>
+</body>
+</html>
